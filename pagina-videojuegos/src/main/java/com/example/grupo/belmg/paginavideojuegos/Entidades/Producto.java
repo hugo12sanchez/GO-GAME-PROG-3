@@ -25,7 +25,7 @@ public abstract class Producto extends Base{
     @Size(min=1,max=40, message="El nombre del producto debe tener entre 1 y 40 caracteres.")
     private String nombre;
 
-    @Size(min=5,max=255, message="El nombre debe tener entre 5 y 255 caracteres.")
+    @Size(min=5,max=500, message="El descripcion debe tener entre 5 y 255 caracteres.")
     private String descripcion;
 
     private boolean activo = true;

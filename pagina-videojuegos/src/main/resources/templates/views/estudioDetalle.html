@@ -33,7 +33,7 @@
                 <div class="card-body">
                     <h5 class="card-title" th:text="${videojuego.nombre}"></h5>
                     <p class="card-text">Precio: $<span th:text="${videojuego.precio}"></span></p>
-                    <div style="color: white; font-size: 15px" th:if="${videojuego.PG}">ATP</div><div style="color: white" th:unless="${videojuego.PG}">+18</div>
+                    <div style="color: white; font-size: 15px" th:unless="${videojuego.PG}">ATP</div><div style="color: white" th:if="${videojuego.PG}">+18</div>
                     <p class="card-text" style="color: white; font-size: 20px"><span th:text="${videojuego.categoria.tipo}"></span></p>
                     <a th:href="@{/videojuego/detalle/{id}(id=${videojuego.id})}" style="margin-left: 2.5em;" class="btn btn-danger btn-lg"> Ver detalles!</a>
 
