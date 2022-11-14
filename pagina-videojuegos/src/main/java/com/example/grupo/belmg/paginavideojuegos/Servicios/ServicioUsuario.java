@@ -15,4 +15,6 @@ public interface ServicioUsuario extends ServicioBase<Usuario, Long>, UserDetail
     public void guardarDireccionYTarjeta(long idUsuario, long idDireccion, long idTarjeta)throws  Exception;
     public List<Usuario> buscarAdmin() throws Exception;
     public Usuario saveAdmin(Usuario entity) throws Exception;
+    public void desactivaAdmin(long id) throws Exception;
+   public void desactivaAdminSetRoleUser(long id) throws Exception;
 }

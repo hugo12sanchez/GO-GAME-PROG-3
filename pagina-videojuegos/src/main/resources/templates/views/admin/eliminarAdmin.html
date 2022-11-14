@@ -30,7 +30,7 @@
         <td th:text="${admins.email}"></td>
         <td>
           <form th:action="@{/usuarios/eliminarAdmin/{id}(id=${admins.id})}" method="post">
-            <button type="submit" class="btn btn-danger">Eliminar Usuario</button>
+            <button type="submit" class="btn btn-danger">Revocar Privilegios</button>
           </form>
         </td>
       </tr>

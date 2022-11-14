@@ -114,6 +114,26 @@ public class ImplementacionServicioUsuario extends ImplementacionServicioBase<Us
 
     }
 
+    @Override
+    @Transactional
+    public void desactivaAdmin(long id) throws Exception {
+        try {
+            repositorio.desactivaAdmin(id);
+        }catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
+    }
+
+    @Override
+    @Transactional
+    public void desactivaAdminSetRoleUser(long id) throws Exception {
+        try {
+            repositorio.desactivaAdminSetRoleUser(id);
+        }catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
+    }
+
     public long obtenerUsuario() throws Exception {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String email = authentication.getName();

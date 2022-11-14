@@ -31,4 +31,11 @@ public interface RepositorioUsuario extends RepositorioBase<Usuario, Long>{
     @Query(value = "UPDATE usuarios SET fk_tarjeta = ?2,fk_direccion = ?3 WHERE id = ?1",
             nativeQuery = true)
     void guardarDireccionYTarjeta(long idUsuario, long idTarjeta, long idDireccion);
+
+    @Modifying
+    @Query(value = "UPDATE usuarios SET usuarios.admin = (FALSE) WHERE id = ?1", nativeQuery = true)
+    void desactivaAdmin(long id);
+    @Modifying
+    @Query(value = "UPDATE rol SET nombre = ('ROLE_USER') WHERE id = ?1",nativeQuery = true)
+    void desactivaAdminSetRoleUser(long id);
 }

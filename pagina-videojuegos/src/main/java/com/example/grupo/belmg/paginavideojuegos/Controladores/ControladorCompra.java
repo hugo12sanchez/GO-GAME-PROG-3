@@ -44,11 +44,8 @@ public class ControladorCompra extends ImplementacionControladorBase<Compra, Imp
     public String detalleCompra(Model model,@PathVariable("id")long id){
         try{
 
-            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-            String email = authentication.getName();
-
-            long idUsuario = servicioUsuario.traerIdUsuarioActual(email);
-            Usuario usuario = this.servicioUsuario.findById(idUsuario);
+            ;
+            Usuario usuario = this.servicioUsuario.findById(this.servicioUsuario.obtenerUsuario());
             model.addAttribute("usuario",usuario);
 
             Videojuego videojuego = this.servicioVideojuego.findById(id);
@@ -88,11 +85,8 @@ public class ControladorCompra extends ImplementacionControladorBase<Compra, Imp
     public String detalleCompraMerch(Model model,@PathVariable("id")long id){
         try{
 
-            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-            String email = authentication.getName();
 
-            long idUsuario = servicioUsuario.traerIdUsuarioActual(email);
-            Usuario usuario = this.servicioUsuario.findById(idUsuario);
+            Usuario usuario = this.servicioUsuario.findById(this.servicioUsuario.obtenerUsuario());
             model.addAttribute("usuario",usuario);
             Merch merch = this.servicioMerch.findById(id);
 

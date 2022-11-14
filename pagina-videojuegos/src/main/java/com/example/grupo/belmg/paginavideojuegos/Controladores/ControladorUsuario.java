@@ -31,11 +31,6 @@ public class ControladorUsuario extends ImplementacionControladorBase<Usuario, I
     @Autowired
     ImplementacionServicioCompra servicioCompra;
 
-    @Autowired
-    ImplementacionServicioVideojuego servicioVideojuego;
-
-    @Autowired
-    ImplementacionServicioMerch servicioMerch;
     @GetMapping("/search")
     public ResponseEntity<?> search(@RequestParam String filtro){
 
@@ -134,7 +129,8 @@ public class ControladorUsuario extends ImplementacionControladorBase<Usuario, I
         try {
             Usuario usuario = this.service.findById(id);
             modelo.addAttribute("admin", usuario);
-            this.service.delete(id);
+            this.service.desactivaAdminSetRoleUser(id);
+            this.service.desactivaAdmin(id);
             return "redirect:/usuarios/eliminarAdmin";
         }catch (Exception e){
             return "error/404";
