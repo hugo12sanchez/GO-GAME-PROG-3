@@ -36,14 +36,14 @@
                             <div class="text-danger" th:if="${#fields.hasErrors('nombre_usuario')}" th:errors="*{nombre_usuario}"></div>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="contrasenia">contraseña:</label>
-                            <input  type="password" class="form-control" id="contrasenia" th:field="*{contrasenia}">
-                            <div class="text-danger" th:if="${#fields.hasErrors('contrasenia')}" th:errors="*{contrasenia}"></div>
-                        </div>
-                        <div class="form-group col-md-6">
                             <label for="email">Email:</label>
                             <input  type="email" class="form-control" id="email" th:field="*{email}">
                             <div class="text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="contrasenia">contraseña:</label>
+                            <input  type="password" class="form-control" id="contrasenia" th:field="*{contrasenia}">
+                            <div class="text-danger" th:if="${#fields.hasErrors('contrasenia')}" th:errors="*{contrasenia}"></div>
                         </div>
                         <div class="row m-3">
                             <div class="col-md-3">
