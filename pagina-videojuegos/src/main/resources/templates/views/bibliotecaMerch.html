@@ -29,24 +29,27 @@
   <a th:href="@{/usuarios/videojuego/biblioteca}" class="btn btn-danger" type="button">Videojuegos</a>
 </div>
 <br>
+
 <div class="text-center text-white" th:if="${merch.size() == 0}">
   <h1>Todavía no ha comprado ningún artículo de merch!</h1>
 </div>
-<div class="container" style="align-items: center;">
-<div class=" row mt-5" th:if="${merch != null}">
-  <div class="col-12 col-sm-3" th:each="merchs : ${merch}">
-    <div class="card text-bg-dark mb-3" style="width: 15rm">
-        <div class="col-md-5" >
-          <img class="card-img-top" th:src="${merchs.img_portada}"  alt="imagen merch del usuaio">
-        </div>
-        <div class="card-body">
-            <h5 class="card-title" th:value="${merchs.nombre}" th:text="${merchs.nombre}"></h5>
-            <p class="card-text" th:text="${merchs.fabricante.getNombre}"></p>
-        </div>
 
+
+
+<div class="container" style="align-items: center;">
+    <div class="row mt-5" th:if="${merch != null}">
+        <div class="col-12 col-sm-3" th:each="merchs : ${merch}">
+            <div class="card text-bg-dark mb-3 text-center" style="width: 17rem">
+                <div class="col-md-5" >
+                    <img class="card-img-top" th:src="${merchs.img_portada}" alt="Imagen merch promocional">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title" th:value="${merchs.nombre}" th:text="${merchs.nombre}"></h5>
+                    <p class="card-text" th:text="${merchs.fabricante.getNombre}"></p>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>

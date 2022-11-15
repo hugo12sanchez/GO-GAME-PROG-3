@@ -350,7 +350,7 @@ public class ControladorMerch extends ImplementacionControladorBase<Merch, Imple
 
         PageRequest pageRequest = PageRequest.of(page,4);
 
-        Page<Merch> pageMerch = servicioMerch.findAll(pageRequest);
+        Page<Merch> pageMerch = servicioMerch.findAllByActivo(pageRequest);
 
         int totalPage = pageMerch.getTotalPages();                                                     //Total de paginas que tienen los datos de la base de datos(cuantos links se muestran)
         if(totalPage > 0){

@@ -107,6 +107,8 @@ public class ControladorCompra extends ImplementacionControladorBase<Compra, Imp
             Usuario usuario = this.servicioUsuario.findById(idUsuario);
             System.out.println(usuario.getNombre());
 
+
+
             compra.setUsuario(usuario);
             compra.setMerch(merch);
             compra.setFecha_de_compra(new Date());
@@ -114,6 +116,12 @@ public class ControladorCompra extends ImplementacionControladorBase<Compra, Imp
 
             System.out.println(merch.getPrecio());
             service.save(compra);
+
+            merch.setStock(merch.getStock()-1);
+            this.servicioMerch.update(merch.getId(), merch);
+
+
+
             return "redirect:/usuarios/merch/biblioteca";
         }catch (Exception e){
             return "/error";

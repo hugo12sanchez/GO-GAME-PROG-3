@@ -97,10 +97,10 @@ public class ImplementacionServicioMerch extends ImplementacionServicioBase<Merc
     //----
 
     @Transactional
-    public List<Merch> findAllByActivo() throws Exception{
+    public Page<Merch> findAllByActivo(Pageable pageable) throws Exception{
 
         try{
-            List<Merch> entidades = this.repositorio.findAllByActivo();
+            Page<Merch> entidades = this.repositorio.findAllByActivo(pageable);
             return entidades;
         }catch(Exception e){
             throw new Exception(e.getMessage());

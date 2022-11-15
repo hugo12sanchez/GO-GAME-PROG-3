@@ -20,8 +20,8 @@ public interface RepositorioMerch extends RepositorioBase<Merch, Long>{
     )
     List<Merch> search(String filtro);*/
 
-    @Query(value = "SELECT * FROM merchs WHERE merchs.activo = true", nativeQuery = true)
-    List<Merch> findAllByActivo();
+    @Query(value = "SELECT * FROM merchs WHERE merchs.activo = true", countQuery = "SELECT count(*) FROM merchs", nativeQuery = true)
+    Page<Merch> findAllByActivo(Pageable pageable);
 
     @Query(value = "SELECT * FROM merchs WHERE merchs.id = :id AND merchs.activo = true", nativeQuery = true)
     Optional<Merch> findByIdAndActivo(@Param("id") long id);
