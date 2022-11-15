@@ -193,6 +193,7 @@ public class ControladorVideojuego extends ImplementacionControladorBase<Videoju
             model.addAttribute("imagen", new Imagen());
             model.addAttribute("cantImagenes", cantImagenes);
 
+
             return "views/formulario/ingresoimg";
 
         }catch(Exception e){
@@ -225,6 +226,7 @@ public class ControladorVideojuego extends ImplementacionControladorBase<Videoju
                 URLvalid = true;
                 model.addAttribute("URLvalid", URLvalid);
             }
+            imagen.setId(0);
 
             imagen.setVideojuego(this.servicioVideojuego.findById(id));
             servicioImagen.save(imagen);

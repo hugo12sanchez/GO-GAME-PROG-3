@@ -205,6 +205,7 @@ public class ControladorMerch extends ImplementacionControladorBase<Merch, Imple
                 model.addAttribute("URLvalid", URLvalid);
             }
 
+            imagen.setId(0);
             imagen.setMerch(this.servicioMerch.findById(id));
             servicioImagen.save(imagen);
 
