@@ -1,0 +1,16 @@
+Buenas por favor importar la base de datos en su SQL para poder tener todos los videojuegos y merch cargados junto a los usuarios.
+
+Primero se debe realizar la conexión a su aplicación de administración de dbs (SQLyog, MySQL Workbench) 
+y crear una nueva base de datos con el nombre de "gogames_videojuegos", que esta indicado en las propiedades de nuestra app.
+Se debe importar el archivo "Base de datos Final.sql" guardado en la carpeta "Complementos" que contiene los scripts necesarios 
+para la creación de las tablas y la carga de datos seleccionados para su muestra.
+
+Roles Pre-Cargados:
+
+Super administrador: mail: superAdmin@gmail.com contraseña: 1111
+
+Administrador: mail admin@gmail.com contraseña: 1111
+
+Administrador2: mail admin2@gmail.com contraseña 1111
+
+usuario: mail user@gmail.com contraseña 1111
